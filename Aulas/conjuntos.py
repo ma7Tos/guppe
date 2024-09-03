@@ -94,7 +94,116 @@ print(len(cidades))
 
 print(len(set(cidades)))
 ---------------------------------------------------------------------------------------------------------------------
+# Adicionando elementos em um conjunto
+s = {1, 2, 3}
+
+s.add(4)
+s.add(4) # Duplicidade não gera erro. Simplsmente é ignorado e não é adicionado.
+print(s)
+---------------------------------------------------------------------------------------------------------------------
+# Remover elementos em um conjunto
+
+s = {1, 2, 3}
+print(s)
+
+# Forma 1
+s.remove(3) # Não é índice! Informamos o valor a ser removido.
+print(s)
+
+# Obs.: Caso o valor não seja encontrado será acusado erro. Nnehum valor é retornado.
+
+# Forma 2
+
+s.discard(2)
+print(s)
+
+# Obs.: Se o valor não for encotnrado, nenhum erro é gerado.
+---------------------------------------------------------------------------------------------------------------------
+# Copiando um conjunto para outro...
+
+s = {1, 2, 3}
+print(s)
+
+# Forma 1 - Deep Copy
+
+novo = s.copy()
+print(novo)
+
+novo.add(4)
+
+print(novo)
+print(s)
+
+# Forma 2 - Shallow Copy
+
+novo = s
+
+novo.add(4)
+
+print(novo)
+print(s)
+---------------------------------------------------------------------------------------------------------------------
+s = {1, 2, 3}
+print(s)
+
+# Podemos remover todos os itens de um conjunto
+
+s.clear()
+print(s)
+---------------------------------------------------------------------------------------------------------------------
+# Métodos Matemáticos de Conjuntos
+
+# Imagine que temos dois conjuntos: Um contendo estudantes do curso de Python e um contendo estudantes do curso de java.
+
+estudantes_python = {'Marcos', 'Patricia', 'Ellen', 'Pedro', 'Julia', 'Guilherme'}
+estudantes_java = {'Fernando', 'Gustavo', 'Julia', 'Ana', 'Patricia'}
+
+# Veja que alguns alunos que estudam Python também estudam Java.
+
+# Precisamos gerar um conjunto com nomes de estudantes únicos
+
+# Forma 1 - Utilizando union
+
+unicos1 = estudantes_python.union(estudantes_java)
+# {'Gustavo', 'Patricia', 'Guilherme', 'Ellen', 'Fernando', 'Julia', 'Pedro', 'Marcos', 'Ana'}
+unicos2 = estudantes_java.union(estudantes_python)
+# {'Ellen', 'Ana', 'Pedro', 'Marcos', 'Julia', 'Gustavo', 'Fernando', 'Guilherme', 'Patricia'}
+print(unicos1)
+print(unicos2)
+
+# Forma 2 - Utilizando o caractere pipe |
+
+unicos3 = estudantes_python | estudantes_java
+print(unicos3)
+
+# Gerar um conjunto de estudantes que estão em ambos os cursos
+
+# Forma 1 - Utilizando intersection
+
+ambos1 = estudantes_python.intersection(estudantes_java)
+print(ambos1)
+
+# Forma 2 - Utilizando o &
+
+ambos2 = estudantes_python & estudantes_java
+print(ambos2)
+
+# Gerar um conjunto de estudantes que não estão no outro curso.
+
+so_python = estudantes_python.difference(estudantes_java)
+print(so_python)
+
+so_java = estudantes_java.difference(estudantes_python)
+print(so_java)
 """
 
-# Adicionando elementos em um conjunto
-s =
+# Soma*, Valor Máximo*, Valor Mínimo*, Tamanho
+
+#*Se os valores forem todos inteiros ou reais
+
+s = {1,2, 3, 4, 5, 6,}
+
+print(sum(s))
+print(max(s))
+print(min(s))
+print(len(s))
