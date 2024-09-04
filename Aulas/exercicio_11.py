@@ -6,11 +6,11 @@ c) Modifique a lista na posição 5, atribuindo a esta posição o valor 100.
 d) Mostre na tela cada valor da lista A, um em cada linha.
 """
 
-A = [1, 0, 5, -2, -5, 7]
+A: list[int] = [1, 0, 5, -2, -5, 7]
 print(f"A lista contém: ", A)
-soma = A[0] + A[1] + A[5]
-print(f"A soma das posições {A[0]}, {A[1]} e {A[5]} é: ", soma)
-print(f"Agora a posição {A[5]} terá o valor 100.")
+soma: int  = A[0] + A[1] + A[5]
+print(f"A soma dos valores {A[0]}, {A[1]} e {A[5]} é: ", soma)
+print(f"Agora o número {A[5]} na posição 5, terá o valor 100.")
 A[5] = 100
 
 for valor in A:
